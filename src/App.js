@@ -1,20 +1,39 @@
-import React from "react";
-import { Button } from "react-bootstrap";
+import React, { useState, useEffect } from "react";
+import Cards from "./components/Card/Cards";
+import {Row, Col, Container} from 'react-bootstrap';
 import { getPokemons } from "./services/getPokemon";
 
-
 const App = () => {
-  const callApi = async () => {
-   const res = await getPokemons();
-   console.log(res);
-  }
+  const [pokemonList, setPokemonList] = useState([]);
+
+  const handleGetPokemons = async () => {
+    const res = await getPokemons();
+    if (res.error) {
+      // TODO: handle error
+      console.log(res);
+    }
+    setPokemonList(res.pokemon);
+  };
+  console.log(pokemonList);
+
+  useEffect(() => {
+    handleGetPokemons();
+  }, []);
 
   return (
     <div>
-      Hello World
-      <Button variant="primary" onClick={callApi}>Primary</Button>
+      <Container>
+        PokeDex
+        <Row>
+          {pokemonList.map((pokemon) => (
+            <Col>
+              <Cards pokemon={pokemon} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </div>
   );
-}
+};
 
 export default App;
