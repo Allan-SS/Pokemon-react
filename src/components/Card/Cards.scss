@@ -1,7 +1,7 @@
 .Cards{
     width: 18rem;
     text-align: center;
-    margin-bottom: 3rem;
+    margin: 1.5rem 0;
     transition: transform 100ms ease-in-out;
     &:hover{
         transform: scale(1.05);

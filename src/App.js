@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Cards from "./components/Card/Cards";
-import {Row, Col, Container} from 'react-bootstrap';
+import { Row, Col, Container } from "react-bootstrap";
 import { getPokemons } from "./services/getPokemon";
+import NavBar from "./components/NavBar/NavBar";
 
 const App = () => {
   const [pokemonList, setPokemonList] = useState([]);
@@ -22,8 +23,8 @@ const App = () => {
 
   return (
     <div>
+      <NavBar />
       <Container>
-        PokeDex
         <Row>
           {pokemonList.map((pokemon) => (
             <Col>
