@@ -3,6 +3,7 @@ import Cards from "./components/Card/Cards";
 import { Row, Col, Container } from "react-bootstrap";
 import { getPokemons } from "./services/getPokemon";
 import NavBar from "./components/NavBar/NavBar";
+import ModalError from "./components/Modal/Modal";
 
 const App = () => {
   const [pokemonList, setPokemonList] = useState([]);
@@ -10,7 +11,7 @@ const App = () => {
   const handleGetPokemons = async () => {
     const res = await getPokemons();
     if (res.error) {
-      // TODO: handle error
+      <ModalError/>
       console.log(res);
     }
     setPokemonList(res.pokemon);
