@@ -1,22 +1,39 @@
-import React, { useState, useEffect } from "react";
-import Cards from "./components/Card/Cards";
-import { Row, Col, Container } from "react-bootstrap";
+import React, { useEffect, useContext } from "react";
 import { getPokemons } from "./services/getPokemon";
 import NavBar from "./components/NavBar/NavBar";
 import ModalError from "./components/Modal/Modal";
+import GlobalStateContext from "./global/GlobalStateContext";
+import List from "./components/List/List";
 
 const App = () => {
-  const [pokemonList, setPokemonList] = useState([]);
+  const { states, setters } = useContext(GlobalStateContext);
+
+  const pokeList = states.pokemonList;
+  const lowerSearch = states.searchValue.toLowerCase();
 
   const handleGetPokemons = async () => {
     const res = await getPokemons();
     if (res.error) {
-      <ModalError/>
+      <ModalError />;
       console.log(res);
     }
-    setPokemonList(res.pokemon);
+    setters.setPokemonList(res.pokemon);
   };
-  console.log(pokemonList);
+  console.log(pokeList);
+
+  const handlePokemon = () => {
+    if (states.searchValue) {
+      return pokeList.filter((list) =>
+        list.name.toLowerCase().includes(lowerSearch)
+      );
+    } else if (states.selected) {
+      return pokeList.filter((listType) =>
+        listType.type.includes(states.selected)
+      );
+    } else {
+      return pokeList;
+    }
+  };
 
   useEffect(() => {
     handleGetPokemons();
@@ -25,15 +42,7 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <Container>
-        <Row>
-          {pokemonList.map((pokemon) => (
-            <Col>
-              <Cards pokemon={pokemon} />
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <List filterPokemons={handlePokemon()} />
     </div>
   );
 };
