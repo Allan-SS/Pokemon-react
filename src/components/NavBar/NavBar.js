@@ -2,37 +2,71 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import LogoPsyduck from "../../assets/psyduck.png"
+import LogoPsyduck from "../../assets/psyduck.png";
+import Form from "react-bootstrap/Form";
+import { useContext } from "react";
+import GlobalStateContext from "../../global/GlobalStateContext";
 
 const NavBar = () => {
+  const { states, setters } = useContext(GlobalStateContext);
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+    setters.setSearchValue(value);
+    console.log(value);
+  };
+
+  const typesPokemon = [
+    "Water",
+    "Bug",
+    "Dragon",
+    "Electric",
+    "Ghost",
+    "Fire",
+    "Ice",
+    "Fighting",
+    "Normal",
+    "Grass",
+    "Psychic",
+    "Rock",
+    "Ground",
+    "Poison",
+    "Flying",
+  ];
+
   return (
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">
-        <img
-          alt="psyduck"
-          src={LogoPsyduck}
-          width="50"
-          height="50"
-        />
-      PokeDex
-      </Navbar.Brand>
+          <img alt="psyduck" src={LogoPsyduck} width="50" height="50" />
+          POKEDEX
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Container>
-            </Container>
-            <NavDropdown title="Tipos De Pokémon" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+            <NavDropdown title="Types of Pokemons" id="basic-nav-dropdown">
+              {typesPokemon.map((type, index) => (
+                <NavDropdown.Item
+                  value={type}
+                  onClick={() => {
+                    setters.setSelected(type);
+                  }}
+                  key={index}
+                >
+                  {type}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
+            <Form className="d-flex">
+              <Form.Control
+                onChange={handleChange}
+                value={states.searchValue}
+                type="search"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+              />
+            </Form>
           </Nav>
         </Navbar.Collapse>
       </Container>
