@@ -4,6 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import LogoPsyduck from "../../assets/psyduck.png";
 import Form from "react-bootstrap/Form";
+import "./Navbar.scss";
 import { useContext } from "react";
 import GlobalStateContext from "../../global/GlobalStateContext";
 
@@ -13,7 +14,6 @@ const NavBar = () => {
   const handleChange = (e) => {
     const { value } = e.target;
     setters.setSearchValue(value);
-    console.log(value);
   };
 
   const typesPokemon = [
@@ -35,7 +35,7 @@ const NavBar = () => {
   ];
 
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className="NavBar" expand="lg">
       <Container>
         <Navbar.Brand href="#home">
           <img alt="psyduck" src={LogoPsyduck} width="50" height="50" />
