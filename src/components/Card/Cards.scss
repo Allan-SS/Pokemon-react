@@ -1,18 +1,42 @@
-.Cards{
-    width: 18rem;
-    text-align: center;
-    margin: 1.5rem 0;
-    transition: transform 200ms ease-in-out;
-    &:hover{
-        transform: scale(1.05);
-        box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.4);
-    }
+.Cards {
+  width: 13rem;
+  text-align: center;
+  margin: 1.5rem 0 0.5rem 0;
+  border: none;
+  border-radius: 17px 20px 17px 20px;
+  transition: transform 400ms ease-in-out;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.4);
+  }
 }
 
-.Cards-img{
-    width: 100%;
-    img {
-        height: 8.5rem;
-        width: 9rem;
-    }
+.Cards-img {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: rgba(14, 7, 6, 0.4);
+  img {
+    height: 8rem;
+    width: 8.125rem;
+  }
+}
+
+.Button {
+  outline: none;
+  border: none;
+  background: none;
+  transition: transform 400ms ease-in-out;
+  &:hover {
+    transform: scale(1.2);
+  }
+  img {
+    width: 3rem;
+  }
+}
+
+.NumPokemon {
+  display: flex;
+  font-size: 14px;
+  margin: 0;
 }

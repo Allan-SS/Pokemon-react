@@ -15,11 +15,10 @@ const App = () => {
     const res = await getPokemons();
     if (res.error) {
       <ModalError />;
-      console.log(res);
     }
     setters.setPokemonList(res.pokemon);
   };
-  console.log(pokeList);
+  console.log(pokeList)
 
   const handlePokemon = () => {
     if (states.searchValue) {

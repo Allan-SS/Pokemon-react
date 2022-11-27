@@ -1,0 +1,31 @@
+.Modal {
+  background-color: #db0e2e;
+  box-shadow: 2px 3px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.descriptionModal {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #2ba8f9;
+  box-shadow: 2px 3px 2px 1px rgba(0, 0, 0, 0.4);
+}
+
+.ContainerImg {
+  display: flex;
+  justify-content: center;
+}
+
+.imgModal {
+  width: 15rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  text-align: center;
+  border-radius: 50px 5px 50px 5px;
+  border: #d8d8d8 5px solid;
+  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
+  background: url("../../assets/body_bg.png");
+
+  img {
+    width: 7rem;
+  }
+}
