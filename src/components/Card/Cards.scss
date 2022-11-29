@@ -7,7 +7,7 @@
   transition: transform 400ms ease-in-out;
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 5px 5px 15px -1px rgba(0, 0, 0, 0.4);
   }
 }
@@ -16,22 +16,19 @@
   width: 100%;
   margin-top: 1rem;
   background-color: rgba(14, 7, 6, 0.4);
+
+  &:hover {
+    background-color: rgba(14, 7, 6, 0.6);
+  }
+
   img {
     height: 8rem;
     width: 8.125rem;
-  }
-}
-
-.Button {
-  outline: none;
-  border: none;
-  background: none;
-  transition: transform 400ms ease-in-out;
-  &:hover {
-    transform: scale(1.2);
-  }
-  img {
-    width: 3rem;
+    transition: transform 300ms ease-in-out;
+    
+    &:hover{
+      transform: scale(1.05);
+    }
   }
 }
 

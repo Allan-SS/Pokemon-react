@@ -6,10 +6,17 @@ import LogoPsyduck from "../../assets/psyduck.png";
 import Form from "react-bootstrap/Form";
 import "./Navbar.scss";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import GlobalStateContext from "../../global/GlobalStateContext";
 
 const NavBar = () => {
   const { states, setters } = useContext(GlobalStateContext);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    return navigate("/");
+  };
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -37,7 +44,7 @@ const NavBar = () => {
   return (
     <Navbar className="NavBar" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand className="Title" onClick={() => handleClick()}>
           <img alt="psyduck" src={LogoPsyduck} width="50" height="50" />
           POKEDEX
         </Navbar.Brand>

@@ -1,0 +1,44 @@
+.Button {
+    outline: none;
+    border: none;
+    background: none;
+    transition: transform 400ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    img {
+        width: 3rem;
+    }
+}
+
+.capture-btn {
+    display: flex;
+    flex-direction: column;
+
+    &__tooltip {
+        width: 100%;
+
+        img {
+            width: 4rem;
+        }
+    }
+
+    &__button {
+        button {
+            outline: none;
+            border: none;
+            background: none;
+            transition: transform 400ms ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+
+            img {
+                width: 3rem;
+            }
+        }
+    }
+}
