@@ -1,0 +1,35 @@
+.ContainerButton {
+  z-index: 1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+
+  button {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-color: #2ba8f9;
+    padding: 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 300ms ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+  }
+
+  img {
+    width: 4rem;
+    padding: 10px;
+    transition: transform 400ms ease-in-out;
+    
+        &:hover {
+            transform: scale(1.07);
+        }
+  }
+}
+
+.AlertButton {
+    margin-bottom: 5px;
+}
