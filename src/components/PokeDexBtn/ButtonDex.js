@@ -13,13 +13,13 @@ const ButtonDex = ({ path, message }) => {
   };
 
   const renderTooltip = (props) => (
-    <Tooltip className="AlertButton" id="button-tooltip" {...props}>
+    <Tooltip className="alert-btn" id="button-tooltip" {...props}>
       {message}
     </Tooltip>
   );
 
   return (
-    <div className="ContainerButton">
+    <div className="container-btn">
       <OverlayTrigger
         placement="top"
         delay={{ show: 100, hide: 250 }}

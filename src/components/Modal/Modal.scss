@@ -1,31 +1,45 @@
-.Modal {
-  background-color: #db0e2e;
-  box-shadow: 2px 3px 2px 1px rgba(0, 0, 0, 0.4);
+.modal-content {
+  background: none !important;
+  border: none;
 }
 
-.descriptionModal {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #2ba8f9;
-  box-shadow: 2px 3px 2px 1px rgba(0, 0, 0, 0.4);
+.container-modal {
+  border-radius: 0.375rem;
+  background: #262626 url("../../assets/container_bg.png");
+
 }
 
-.ContainerImg {
+.modal-header {
+  border: none;
+}
+
+.container-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.container-img {
+  width: 100%;
   display: flex;
   justify-content: center;
+  
+  div {
+    width: 16.875rem;
+    background: rgba(255, 255, 255, 0.2);
+    border: 0.188rem solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.5px);
+    border-radius: 0.188rem;
+    text-align: center;
+  }
+  
+  img {
+    width: 8rem;
+  }
 }
 
-.imgModal {
-  width: 15rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
-  text-align: center;
-  border-radius: 50px 5px 50px 5px;
-  border: #d8d8d8 5px solid;
-  box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
-  background: url("../../assets/body_bg.png");
-
-  img {
-    width: 7rem;
-  }
+.descr-details {
+  font-size: 1.3rem;
+  padding: 0.625rem;
 }

@@ -12,21 +12,23 @@ const ModalDetails = (props) => {
         size="sl"
         centered
       >
-        <div className="Modal">
+        <div className="container-modal">
           <Modal.Header closeButton>
-            <Modal.Title>{props.namePokemon}</Modal.Title>
-            <ModalTitle>{props.numPokemon}</ModalTitle>
+            <div className="container-title">
+              <Modal.Title>{props.namePokemon}</Modal.Title>
+              <ModalTitle>{props.numPokemon}</ModalTitle>
+            </div>
           </Modal.Header>
-          <div className="ContainerImg">
-            <div className="imgModal">
+          <div className="container-img">
+            <div>
               <img alt="ImgModal" src={props.imgPokemon} />
             </div>
           </div>
           <Modal.Body>
-            <h5 className="descriptionModal">Type : {props.typePokemon}</h5>
-            <h5 className="descriptionModal">Height : {props.heightPokemon}</h5>
-            <h5 className="descriptionModal">Weight : {props.weightPokemon}</h5>
-            <h5 className="descriptionModal">Weaknesses : {props.weaknessesPokemon}</h5>
+              <h5 className="descr-details">Type : {props.typePokemon + ''}</h5>
+              <h5 className="descr-details">Height : {props.heightPokemon}</h5>
+              <h5 className="descr-details">Weight : {props.weightPokemon}</h5>
+              <h5 className="descr-details">Weaknesses : {props.weaknessesPokemon + ''}</h5>
           </Modal.Body>
         </div>
       </Modal>

@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@400;500;600;700&display=swap");
 
 html,body {
-    background: url("../../assets/body_bg.png");
+    background: url("../../assets/container_bg.png");
 }
 
 * {
@@ -10,4 +10,5 @@ html,body {
     box-sizing: border-box;
     font-family: $font-family-standard;
     font-size: $font-size-standard;
+    color: $color-neutral;
 }

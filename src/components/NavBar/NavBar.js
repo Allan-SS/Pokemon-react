@@ -3,13 +3,14 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import LogoPsyduck from "../../assets/psyduck.png";
+import LogoPokeBall from "../../assets/pokebola.png";
 import Form from "react-bootstrap/Form";
 import "./Navbar.scss";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import GlobalStateContext from "../../global/GlobalStateContext";
 
-const NavBar = () => {
+const NavBar = ({ add }) => {
   const { states, setters } = useContext(GlobalStateContext);
 
   const navigate = useNavigate();
@@ -42,16 +43,20 @@ const NavBar = () => {
   ];
 
   return (
-    <Navbar className="NavBar" expand="lg">
+    <Navbar className="navBar" expand="lg">
       <Container>
-        <Navbar.Brand className="Title" onClick={() => handleClick()}>
-          <img alt="psyduck" src={LogoPsyduck} width="50" height="50" />
+        <Navbar className="navBar__title" onClick={() => handleClick()}>
+          {add ? (
+            <img alt="psyduck" src={LogoPsyduck} />
+          ) : (
+            <img alt="pokedex" src={LogoPokeBall} />
+          )}
           POKEDEX
-        </Navbar.Brand>
+        </Navbar>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse>
           <Nav className="me-auto">
-            <NavDropdown title="Types of Pokemons" id="basic-nav-dropdown">
+            <NavDropdown title="Types of Pokemons" id="types" menuVariant="dark">
               {typesPokemon.map((type, index) => (
                 <NavDropdown.Item
                   value={type}
