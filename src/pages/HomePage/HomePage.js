@@ -42,7 +42,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <NavBar />
+      <NavBar add/>
       <List filterPokemons={handlePokemon()} add />
       <ButtonDex path="/pokedex" message="PokéDex" />
     </div>

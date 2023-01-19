@@ -1,11 +1,29 @@
-.NavBar {
-  background: #f5f5f5;
-  border-bottom: 5px solid #db0e2e;
+.navBar {
+  background: #252525;
+  border-bottom: 0.375rem solid #FF3D00;
+  color: #fff !important;
+
+  img{
+    width: 3.75rem;
+  }
+
+  &__title{
+    font-weight: bold;
+    font-size: 2.188rem;
+  
+    &:hover{
+      cursor: pointer;
+    }
+  }
+
 }
 
-.Title{
+.navbar-nav {
+  width: 100%;
+  justify-content: flex-end;
+}
 
-  &:hover{
-    cursor: pointer;
-  }
+#types {
+  font-size: 1.3rem;
+  color: #fff;
 }

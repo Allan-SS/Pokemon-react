@@ -7,7 +7,6 @@ import GlobalStateContext from "../../global/GlobalStateContext";
 const CaptureBtn = ({ onClick }) => {
   const { states } = useContext(GlobalStateContext);
 
-
   return (
     <div className="capture-btn">
       {states.showTooltip && (

@@ -5,6 +5,7 @@ import ModalDetails from "../Modal/Modal";
 
 import GlobalStateContext from "../../global/GlobalStateContext";
 import CaptureBtn from "../CaptureBtn/CaptureBtn";
+import DeleteBtn from "../../assets/Group 28.png";
 
 const Cards = ({ pokemon, add }) => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -24,13 +25,18 @@ const Cards = ({ pokemon, add }) => {
   };
 
   return (
-    <Card className="Cards">
-      <div className="Cards-img" onClick={() => setModalShow(!modalShow)}>
-        <Card.Img variant="top" src={pokemon.img} />
+    <Card className="cards">
+      <div className="container-img-card">
+        <div className="container-img-card__img" onClick={() => setModalShow(!modalShow)}>
+          <Card.Img variant="top" src={pokemon.img} />
+        </div>
       </div>
       <Card.Body>
-        <Card.Text className="NumPokemon">Nº {pokemon.num}</Card.Text>
-        <Card.Title>{pokemon.name}</Card.Title>
+        <div className="container-detail">
+          <Card.Text className="container-detail__detail">Nº {pokemon.num}</Card.Text>
+          <Card.Title>{pokemon.name}</Card.Title>
+          <Card.Text className="container-detail__detail">{pokemon.type + ""}</Card.Text>
+        </div>
         {add ? (
           <CaptureBtn onClick={() => handleClick(pokemon)} />
         ) : (
@@ -38,7 +44,7 @@ const Cards = ({ pokemon, add }) => {
             onClick={() => deletePokemon(pokemon.name)}
             className="Button"
           >
-            X
+            <img src={DeleteBtn} alt="Btn_delete" />
           </button>
         )}
         <ModalDetails
